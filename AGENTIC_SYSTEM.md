@@ -270,11 +270,20 @@ Provide nuanced, contextual analysis.
 python run_agentic_system.py research_feasibility_agent/examples/mobile_app.txt
 ```
 
+### With Real LLM (Google Gemini - FREE TIER! ⭐ Recommended):
+```bash
+export GEMINI_API_KEY=your_key
+export LLM_PROVIDER=gemini
+python run_agentic_system.py research_feasibility_agent/examples/ai_healthcare.txt
+```
+**Get your free Gemini API key:** https://aistudio.google.com/app/apikey
+**See:** [GEMINI_SETUP.md](GEMINI_SETUP.md) for detailed instructions
+
 ### With Real LLM (OpenAI):
 ```bash
 export OPENAI_API_KEY=your_key
 export LLM_PROVIDER=openai
-python run_agentic_system.py research_feasibility_agent/examples/ai_healthcare.txt
+python run_agentic_system.py research_feasibility_agent/examples/mobile_app.txt
 ```
 
 ### With Real LLM (Anthropic Claude):
@@ -405,20 +414,41 @@ run_agentic_system.py          # Main runner
 
 ## Requirements
 
+### Basic Requirements:
 ```bash
-pip install pydantic openai anthropic
+pip install pydantic
 ```
 
-For OpenAI:
+### LLM Providers (Choose one or more):
+
+**Google Gemini (Recommended - FREE!):**
+```bash
+pip install google-generativeai
+export GEMINI_API_KEY=your_key
+```
+- **Free tier:** 1,500 requests/day (Gemini 1.5 Flash)
+- **No credit card required**
+- **Get key:** https://aistudio.google.com/app/apikey
+
+**OpenAI:**
 ```bash
 pip install openai
 export OPENAI_API_KEY=your_key
 ```
+- Requires payment
+- Best quality but costs money
 
-For Anthropic Claude:
+**Anthropic Claude:**
 ```bash
 pip install anthropic
 export ANTHROPIC_API_KEY=your_key
+```
+- Requires payment
+- Great for complex reasoning
+
+**Or install all:**
+```bash
+pip install -r requirements.txt
 ```
 
 ## Future Enhancements

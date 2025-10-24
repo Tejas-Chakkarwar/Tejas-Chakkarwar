@@ -9,15 +9,17 @@ class Config:
     """Configuration for the agentic system"""
 
     # LLM Configuration - supports multiple providers
-    LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "openai")  # openai, anthropic, or mock
+    LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "gemini")  # openai, anthropic, gemini, or mock
 
     # API Keys (read from environment variables for security)
     OPENAI_API_KEY: Optional[str] = os.getenv("OPENAI_API_KEY")
     ANTHROPIC_API_KEY: Optional[str] = os.getenv("ANTHROPIC_API_KEY")
+    GEMINI_API_KEY: Optional[str] = os.getenv("GEMINI_API_KEY")
 
     # Model selection
     OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4")
     ANTHROPIC_MODEL: str = os.getenv("ANTHROPIC_MODEL", "claude-3-5-sonnet-20241022")
+    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")  # Free tier: 1500 req/day
 
     # Agent Configuration
     CONFIDENCE_THRESHOLD: float = 0.75  # Minimum confidence before finalizing
@@ -50,6 +52,10 @@ class Config:
 
         if cls.LLM_PROVIDER == "anthropic" and not cls.ANTHROPIC_API_KEY:
             print("⚠️  Warning: ANTHROPIC_API_KEY not set. Using mock LLM.")
+            cls.LLM_PROVIDER = "mock"
+
+        if cls.LLM_PROVIDER == "gemini" and not cls.GEMINI_API_KEY:
+            print("⚠️  Warning: GEMINI_API_KEY not set. Using mock LLM.")
             cls.LLM_PROVIDER = "mock"
 
         return cls.LLM_PROVIDER != "mock"

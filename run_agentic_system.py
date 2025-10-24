@@ -179,14 +179,18 @@ Examples:
   python run_agentic_system.py research_feasibility_agent/examples/quantum_computing.txt
 
 Configuration (via environment variables):
-  LLM_PROVIDER=openai|anthropic|mock (default: mock)
+  LLM_PROVIDER=gemini|openai|anthropic|mock (default: gemini)
+  GEMINI_API_KEY=your_key (for Google Gemini - FREE TIER!)
   OPENAI_API_KEY=your_key (for OpenAI)
   ANTHROPIC_API_KEY=your_key (for Claude)
   CONFIDENCE_THRESHOLD=0.75 (default: 0.75)
   MAX_ITERATIONS=3 (default: 3)
 
 Note: Without API keys, system runs in mock mode with simulated LLM responses.
-      For TRUE agentic reasoning, provide API keys for OpenAI or Anthropic.
+      For TRUE agentic reasoning, use Gemini (free!), OpenAI, or Anthropic.
+
+Recommended: Use Gemini free tier (1500 requests/day)!
+See GEMINI_SETUP.md for instructions.
         """)
         sys.exit(1)
 

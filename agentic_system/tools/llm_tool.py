@@ -37,6 +37,17 @@ class LLMTool:
                 print("⚠️  Anthropic not installed. Install: pip install anthropic")
                 self.provider = "mock"
 
+        elif self.provider == "gemini":
+            try:
+                import google.generativeai as genai
+                genai.configure(api_key=Config.GEMINI_API_KEY)
+                self.client = genai.GenerativeModel(Config.GEMINI_MODEL)
+                self.model = Config.GEMINI_MODEL
+                print(f"✅ Using Gemini {Config.GEMINI_MODEL} (Free tier: 1500 requests/day)")
+            except ImportError:
+                print("⚠️  Gemini not installed. Install: pip install google-generativeai")
+                self.provider = "mock"
+
         if self.provider == "mock":
             print("📝 Using Mock LLM - responses will be simulated")
 
@@ -49,6 +60,8 @@ class LLMTool:
             return self._reason_openai(prompt, system_prompt, temperature, max_tokens)
         elif self.provider == "anthropic":
             return self._reason_anthropic(prompt, system_prompt, temperature, max_tokens)
+        elif self.provider == "gemini":
+            return self._reason_gemini(prompt, system_prompt, temperature, max_tokens)
         else:
             return self._reason_mock(prompt)
 
@@ -93,6 +106,30 @@ class LLMTool:
             return response.content[0].text
         except Exception as e:
             print(f"❌ Anthropic error: {e}")
+            return f"Error in LLM reasoning: {str(e)}"
+
+    def _reason_gemini(self, prompt: str, system_prompt: Optional[str],
+                       temperature: float, max_tokens: int) -> str:
+        """Reason using Google Gemini"""
+        try:
+            # Combine system prompt with user prompt for Gemini
+            full_prompt = prompt
+            if system_prompt:
+                full_prompt = f"{system_prompt}\n\n{prompt}"
+
+            # Configure generation
+            generation_config = {
+                "temperature": temperature,
+                "max_output_tokens": max_tokens,
+            }
+
+            response = self.client.generate_content(
+                full_prompt,
+                generation_config=generation_config
+            )
+            return response.text
+        except Exception as e:
+            print(f"❌ Gemini error: {e}")
             return f"Error in LLM reasoning: {str(e)}"
 
     def _reason_mock(self, prompt: str) -> str:
