@@ -1,0 +1,74 @@
+{
+  "project_name": "Mobile App",
+  "overall_feasibility": "MODERATELY_FEASIBLE",
+  "overall_score": 63.5,
+  "confidence": "medium",
+  "recommendation": "\u26a0\ufe0f PROCEED WITH MODIFICATIONS - Address identified risks before full commitment",
+  "reasoning": "\nTechnology Analysis (Mock):\nBased on the project description, the technology appears to be at a DEVELOPING maturity level.\nThe implementation complexity is MODERATE to HIGH due to integration requirements.\nKey technologies identified: machine learning, cloud infrastructure, APIs.\nTimeline estimate: 8-12 months for MVP.\nRisk: Technology dependencies may cause delays.\nConfidence: 70%\n",
+  "dimension_scores": {
+    "technology": 60.0,
+    "cost": 65.0,
+    "ethical": 65.0,
+    "market": 65.0
+  },
+  "critical_risks": [
+    {
+      "dimension": "technology",
+      "risk": "Timeline estimate: 8-12 months for MVP.",
+      "severity": "medium",
+      "score_impact": "-4 points"
+    },
+    {
+      "dimension": "cost",
+      "risk": "cost risk identified",
+      "severity": "medium",
+      "score_impact": "-4 points"
+    },
+    {
+      "dimension": "ethical",
+      "risk": "ethical risk identified",
+      "severity": "medium",
+      "score_impact": "-4 points"
+    },
+    {
+      "dimension": "market",
+      "risk": "market risk identified",
+      "severity": "medium",
+      "score_impact": "-4 points"
+    }
+  ],
+  "key_opportunities": [
+    {
+      "dimension": "cost",
+      "opportunity": "cost opportunity",
+      "impact": "positive"
+    },
+    {
+      "dimension": "ethical",
+      "opportunity": "ethical opportunity",
+      "impact": "positive"
+    },
+    {
+      "dimension": "market",
+      "opportunity": "market opportunity",
+      "impact": "positive"
+    }
+  ],
+  "next_steps": [
+    "Conduct detailed feasibility study",
+    "Develop project roadmap",
+    "Assemble core team",
+    "Create proof-of-concept",
+    "Secure initial funding"
+  ],
+  "analysis_quality": "moderate",
+  "assumptions": [
+    "Multi-agent analysis",
+    "LLM-powered reasoning",
+    "Iterative refinement"
+  ],
+  "limitations": [
+    "Mock research data",
+    "Limited to 1 iterations"
+  ]
+}
