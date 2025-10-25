@@ -114,8 +114,8 @@ class LLMTool:
         try:
             import google.generativeai as genai
             from google.generativeai.types import HarmCategory, HarmBlockThreshold
-        
-        # Combine system prompt with user prompt for Gemini
+
+            # Combine system prompt with user prompt for Gemini
             full_prompt = prompt
             if system_prompt:
                 full_prompt = f"{system_prompt}\n\n{prompt}"
@@ -134,27 +134,35 @@ class LLMTool:
                 HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
             }
 
+            # Disable safety filters to prevent blocking on feasibility analysis prompts
+            safety_settings = {
+                HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+            }
+
             response = self.client.generate_content(
                 full_prompt,
                 generation_config=generation_config,
                 safety_settings=safety_settings
             )
-        
-        # Handle blocked responses
-            if not response.candidates:
-                return "Analysis blocked by safety filters. Using fallback analysis."
-        
-        # Get the text safely
+
+            # Handle response with proper error checking
             if hasattr(response, 'text'):
                 return response.text
-            elif response.candidates and response.candidates[0].content.parts:
-                return response.candidates[0].content.parts[0].text
+            elif response.candidates and len(response.candidates) > 0:
+                candidate = response.candidates[0]
+                if candidate.content.parts:
+                    return candidate.content.parts[0].text
+                else:
+                    return f"Gemini blocked response (finish_reason: {candidate.finish_reason})"
             else:
                 return "Could not extract response from Gemini."
-            
-        except Exception as err:
-            print(f"❌ Gemini error: {err}")
-            return f"Error in LLM reasoning: {str(err)}"
+
+        except Exception as e:
+            print(f"❌ Gemini error: {e}")
+            return f"Error in LLM reasoning: {str(e)}"
 
     def _reason_mock(self, prompt: str) -> str:
         """Mock reasoning for testing without API keys"""

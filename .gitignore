@@ -35,6 +35,7 @@ env/
 
 # Generated Reports
 feasibility_report_*.json
+agentic_report_*.json
 
 # OS
 .DS_Store
