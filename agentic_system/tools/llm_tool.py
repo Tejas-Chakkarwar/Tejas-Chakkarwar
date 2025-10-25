@@ -21,7 +21,7 @@ class LLMTool:
         # Initialize appropriate client
         if self.provider == "openai":
             try:
-                import openai
+                import openai # type: ignore
                 self.client = openai.OpenAI(api_key=Config.OPENAI_API_KEY)
                 self.model = Config.OPENAI_MODEL
             except ImportError:
@@ -30,7 +30,7 @@ class LLMTool:
 
         elif self.provider == "anthropic":
             try:
-                import anthropic
+                import anthropic # type: ignore
                 self.client = anthropic.Anthropic(api_key=Config.ANTHROPIC_API_KEY)
                 self.model = Config.ANTHROPIC_MODEL
             except ImportError:
@@ -109,28 +109,52 @@ class LLMTool:
             return f"Error in LLM reasoning: {str(e)}"
 
     def _reason_gemini(self, prompt: str, system_prompt: Optional[str],
-                       temperature: float, max_tokens: int) -> str:
+                   temperature: float, max_tokens: int) -> str:
         """Reason using Google Gemini"""
         try:
-            # Combine system prompt with user prompt for Gemini
+            import google.generativeai as genai
+            from google.generativeai.types import HarmCategory, HarmBlockThreshold
+        
+        # Combine system prompt with user prompt for Gemini
             full_prompt = prompt
             if system_prompt:
                 full_prompt = f"{system_prompt}\n\n{prompt}"
 
-            # Configure generation
+        # Configure generation
             generation_config = {
                 "temperature": temperature,
                 "max_output_tokens": max_tokens,
             }
+        
+        # Set permissive safety settings for business/research analysis
+            safety_settings = {
+                HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+            }
 
             response = self.client.generate_content(
                 full_prompt,
-                generation_config=generation_config
+                generation_config=generation_config,
+                safety_settings=safety_settings
             )
-            return response.text
-        except Exception as e:
-            print(f"❌ Gemini error: {e}")
-            return f"Error in LLM reasoning: {str(e)}"
+        
+        # Handle blocked responses
+            if not response.candidates:
+                return "Analysis blocked by safety filters. Using fallback analysis."
+        
+        # Get the text safely
+            if hasattr(response, 'text'):
+                return response.text
+            elif response.candidates and response.candidates[0].content.parts:
+                return response.candidates[0].content.parts[0].text
+            else:
+                return "Could not extract response from Gemini."
+            
+        except Exception as err:
+            print(f"❌ Gemini error: {err}")
+            return f"Error in LLM reasoning: {str(err)}"
 
     def _reason_mock(self, prompt: str) -> str:
         """Mock reasoning for testing without API keys"""
