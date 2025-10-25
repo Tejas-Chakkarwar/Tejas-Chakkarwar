@@ -109,7 +109,7 @@ class LLMTool:
             return f"Error in LLM reasoning: {str(e)}"
 
     def _reason_gemini(self, prompt: str, system_prompt: Optional[str],
-                   temperature: float, max_tokens: int) -> str:
+                       temperature: float, max_tokens: int) -> str:
         """Reason using Google Gemini"""
         try:
             import google.generativeai as genai
@@ -120,18 +120,10 @@ class LLMTool:
             if system_prompt:
                 full_prompt = f"{system_prompt}\n\n{prompt}"
 
-        # Configure generation
+            # Configure generation
             generation_config = {
                 "temperature": temperature,
                 "max_output_tokens": max_tokens,
-            }
-        
-        # Set permissive safety settings for business/research analysis
-            safety_settings = {
-                HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
-                HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
-                HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
-                HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
             }
 
             # Disable safety filters to prevent blocking on feasibility analysis prompts
