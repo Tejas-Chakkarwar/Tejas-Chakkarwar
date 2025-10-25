@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 **Linux/Mac:**
 ```bash
-export GEMINI_API_KEY='your-api-key-here'
+export GEMINI_API_KEY='AIzaSyDFAQQNtbgUVUe38uaC69PwWtBWi9R_PLQ'
 export LLM_PROVIDER='gemini'
 ```
 
