@@ -19,7 +19,7 @@ class Config:
     # Model selection
     OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4")
     ANTHROPIC_MODEL: str = os.getenv("ANTHROPIC_MODEL", "claude-3-5-sonnet-20241022")
-    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")  # Free tier: 1500 req/day
+    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash-latest")  # Free tier: 1500 req/day
 
     # Agent Configuration
     CONFIDENCE_THRESHOLD: float = 0.75  # Minimum confidence before finalizing
