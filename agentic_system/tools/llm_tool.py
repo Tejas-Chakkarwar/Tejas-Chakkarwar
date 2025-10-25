@@ -112,6 +112,9 @@ class LLMTool:
                        temperature: float, max_tokens: int) -> str:
         """Reason using Google Gemini"""
         try:
+            import google.generativeai as genai
+            from google.generativeai.types import HarmCategory, HarmBlockThreshold
+
             # Combine system prompt with user prompt for Gemini
             full_prompt = prompt
             if system_prompt:
@@ -123,11 +126,32 @@ class LLMTool:
                 "max_output_tokens": max_tokens,
             }
 
+            # Disable safety filters to prevent blocking on feasibility analysis prompts
+            safety_settings = {
+                HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+            }
+
             response = self.client.generate_content(
                 full_prompt,
-                generation_config=generation_config
+                generation_config=generation_config,
+                safety_settings=safety_settings
             )
-            return response.text
+
+            # Handle response with proper error checking
+            if hasattr(response, 'text'):
+                return response.text
+            elif response.candidates and len(response.candidates) > 0:
+                candidate = response.candidates[0]
+                if candidate.content.parts:
+                    return candidate.content.parts[0].text
+                else:
+                    return f"Gemini blocked response (finish_reason: {candidate.finish_reason})"
+            else:
+                return "Could not extract response from Gemini."
+
         except Exception as e:
             print(f"❌ Gemini error: {e}")
             return f"Error in LLM reasoning: {str(e)}"
