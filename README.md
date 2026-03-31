@@ -18,7 +18,7 @@
 
 ```yaml
 name: Tejas Chakkarwar
-location: San Jose, CA (from Maharashtra, India 🇮🇳)
+location: San Jose, CA
 education: MS Computer Science @ SJSU (GPA: 3.90, May 2027)
 current_role: Graduate Student & Aspiring SWE Intern
 previous:
@@ -30,7 +30,7 @@ interests:
   - Backend Engineering at Scale
 fun_facts:
   - District-level Table Tennis player 🏓
-  - ACM Secretary @ SJSU
+  - ACM Secretary
   - Volunteer coding teacher through Rotary International
 ```
 
@@ -47,7 +47,7 @@ fun_facts:
 
 Built on AWS Lambda, SQS, and DynamoDB with multi-region deployment and high-throughput message processing.
 
-`AWS Lambda` `SQS` `DynamoDB` `Serverless` `Multi-Region`
+`Python` `AWS Lambda` `SQS` `DynamoDB` `Serverless` `Multi-Region`
 
 </td>
 <td width="50%">
@@ -175,9 +175,8 @@ A comparative C++/Java implementation for real-time packet analysis with a focus
 - 💼 **2+ years** professional SWE experience (Accelya Solutions, Hitachi Vantara)
 - 🏆 **CalHacks 12.0** participant — Built CuriosityAI
 - 🏆 **Daytona HackSprint** — Built a DevSecOps AI Agent
-- 🏆 **AWS Builder Loft AI Hackathon** participant
-- 📋 **ACM Secretary** @ SJSU
-- 🏓 **District-level Table Tennis** player in India
+- 📋 **ACM Secretary** 
+- 🏓 **District-level Table Tennis Player**
 - 🤝 Volunteer coding instructor — **Rotary International**
 
 ---
