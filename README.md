@@ -5,8 +5,8 @@
 ### MS Computer Science @ San Jose State University | Software Engineer | Builder of Things That Scale
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-tejaschakkarwar.com-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://tejaschakkarwar.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_LINKEDIN)
-[![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tejaschakkarwar)
+[![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tejaschakkarwar@gmail.com)
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=2%2B+Years+of+Software+Engineering+Experience;Building+Scalable+Distributed+Systems;AI%2FML+Agent+Frameworks+%26+Cloud+Architecture;Open+Source+Contributor+%7C+GSoC+2026" alt="Typing SVG" />
 
@@ -131,10 +131,10 @@ A comparative C++/Java implementation for real-time packet analysis with a focus
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=tokyonight&hide_border=true" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Tejas-Chakkarwar&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tejas-Chakkarwar&layout=compact&theme=tokyonight&hide_border=true" />
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_GITHUB_USERNAME&theme=tokyonight&hide_border=true" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Tejas-Chakkarwar&theme=tokyonight&hide_border=true" />
 
 </div>
 
@@ -160,7 +160,7 @@ A comparative C++/Java implementation for real-time packet analysis with a focus
 I'm actively looking for **Summer 2026 Software Engineering Internships**. If you're building something cool, let's talk!
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-tejaschakkarwar.com-FF5722?style=flat-square)](https://tejaschakkarwar.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/YOUR_LINKEDIN)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/tejaschakkarwar)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&color=58A6FF&style=flat-square&label=Profile+Views)
 
