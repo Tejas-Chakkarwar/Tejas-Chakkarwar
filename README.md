@@ -2,13 +2,13 @@
 
 # Hey there! I'm Tejas Chakkarwar 👋
 
-### MS Computer Science @ San Jose State University | Software Engineer | Builder of Things That Scale
+### MS Computer Science @ San Jose State University | Ex-SDE Intern @ AWS S3 | Distributed Systems & AI Agents
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-tejaschakkarwar.com-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://tejaschakkarwar.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tejaschakkarwar)
 [![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tejaschakkarwar@gmail.com)
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=2%2B+Years+of+Software+Engineering+Experience;Building+Scalable+Distributed+Systems;AI%2FML+Agent+Frameworks+%26+Cloud+Architecture;Open+Source+Contributor+%7C+GSoC+2026" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=2%2B+Years+of+Software+Engineering+Experience;Ex-SDE+Intern+%40+AWS+S3;Building+Scalable+Distributed+Systems;AI+Agents+%2B+Reliability+Engineering" alt="Typing SVG" />
 
 </div>
 
@@ -39,50 +39,84 @@ fun_facts:
 
 ---
 
+## 💼 Recent Experience
+
+**SDE Intern, Amazon Web Services (S3)** · Arlington, VA · Jun 2026 to Aug 2026
+
+Built backend tooling in Python for an internal S3 service, working across a deployment pipeline of 24 stages and 196 production targets.
+
+**Software Engineer, Accelya Solutions** · Oct 2023 to Jun 2025
+
+Built Java/Spring Boot microservices for airline transaction systems. Tuned SQL on 100M+ record datasets, added multi-tier caching with Redis and Ehcache, and shipped with the Saga pattern and canary deployments.
+
+---
+
 ## 🚀 Featured Projects
 
 <table>
 <tr>
 <td width="50%">
 
-### ⚡ Sentinel
-**Serverless Email Marketing Platform**
+### 🛡️ SafeOps *(MS Project, in progress)*
+**Safety Checks for AI SRE Agents**
 
-Built on AWS Lambda, SQS, and DynamoDB with multi-region deployment and high-throughput message processing.
+Predicts unsafe remediation actions from AI SRE agents before they touch real infrastructure.
 
-`Python` `AWS Lambda` `SQS` `DynamoDB` `Serverless` `Multi-Region`
+`Python` `AI Agents` `SRE` `Evaluation`
 
 </td>
 <td width="50%">
 
-### 🔧 CodeMedic
-**Autonomous Bug-Fixing Agent**
+### ⚡ Sentinel
+**Serverless Email Marketing Platform**
 
-An AI-powered agent that autonomously identifies, analyzes, and fixes bugs using LangGraph orchestration and Google Gemini.
+Multi-region platform on Lambda, SQS, DynamoDB, SES, and EventBridge. Handles around 12,500 emails a minute.
 
-`LangGraph` `Google Gemini` `Python` `AI Agents`
+`TypeScript` `Next.js` `AWS Lambda` `SQS` `DynamoDB` `Multi-Region`
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### 🔬 CuriosityAI
-**Multi-Agent Research System**
+### 🔧 CodeMedic
+**Autonomous Bug-Fixing Agent**
 
-Built at CalHacks 12.0 — a system of coordinating AI agents that collaborate to perform deep research tasks.
+Finds, analyzes, and fixes bugs on its own using LangGraph and Google Gemini. Fixes about 70% of the bugs it's given.
 
-`Multi-Agent` `CrewAI` `Python` `CalHacks 12.0`
+`LangGraph` `Google Gemini` `Python` `AI Agents`
 
 </td>
 <td width="50%">
 
-### 🛡️ Deep Packet Inspection Engine
+### 🔬 CuriosityAI
+**Multi-Agent Research System**
+
+Built at CalHacks 12.0. A team of AI agents that split up and run deep research tasks together.
+
+`Multi-Agent` `CrewAI` `Python` `CalHacks 12.0`
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 📡 Deep Packet Inspection Engine
 **High-Performance Network Analysis**
 
-A comparative C++/Java implementation for real-time packet analysis with a focus on performance benchmarking.
+C++ and Java implementations benchmarked side by side. The C++ engine processes around 500K packets a second.
 
 `C++` `Java` `Networking` `Performance Analysis`
+
+</td>
+<td width="50%">
+
+### 🐹 Concurrency Bugs in Go
+**Research Paper, SJSU**
+
+Empirical study of 15 real Go concurrency bugs, comparing how well different detection tools catch them.
+
+`Go` `Concurrency` `Static Analysis` `Research`
 
 </td>
 </tr>
@@ -154,8 +188,7 @@ A comparative C++/Java implementation for real-time packet analysis with a focus
 
 ## 🌍 Open Source
 
-- 🏥 **GSoC 2026 Applicant** — [OpenELIS Global](https://github.com/I-TECH-UW/OpenELIS-Global-2): Building a comprehensive FHIR Facade Layer (Java/Spring Boot)
-- 🤝 Active contributor with submitted issues and PRs to OpenELIS Global
+- 🏥 **[OpenELIS Global](https://github.com/I-TECH-UW/OpenELIS-Global-2)**: contributed issues and PRs, and proposed a FHIR Facade Layer (Java/Spring Boot) for GSoC 2026
 
 ---
 
@@ -174,13 +207,14 @@ A comparative C++/Java implementation for real-time packet analysis with a focus
 
 ## 🏆 Highlights
 
-- 🎓 **GPA: 3.90** — MS Computer Science @ SJSU
+- ☁️ **SDE Intern @ AWS S3**, Summer 2026
+- 🎓 **GPA: 3.95**, MS Computer Science @ SJSU
 - 💼 **2+ years** professional SWE experience (Accelya Solutions, Hitachi Vantara)
-- 🏆 **CalHacks 12.0** participant — Built CuriosityAI
-- 🏆 **Daytona HackSprint** — Built a DevSecOps AI Agent
-- 📋 **ACM Secretary** 
+- 🏆 **CalHacks 12.0**: built CuriosityAI
+- 🏆 **Daytona HackSprint**: built a DevSecOps AI Agent
+- 📋 **ACM Secretary**
 - 🏓 **District-level Table Tennis Player**
-- 🤝 Volunteer coding instructor — **Rotary International**
+- 🤝 Volunteer coding instructor with **Rotary International**
 
 ---
 
@@ -188,7 +222,7 @@ A comparative C++/Java implementation for real-time packet analysis with a focus
 
 ### 🤝 Let's Connect!
 
-I'm actively looking for **Summer 2026 Software Engineering Internships**. If you're building something cool, let's talk!
+Always happy to talk distributed systems, reliability, or AI agents. If you're building something cool, let's talk!
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-tejaschakkarwar.com-FF5722?style=flat-square)](https://tejaschakkarwar.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/tejaschakkarwar)
