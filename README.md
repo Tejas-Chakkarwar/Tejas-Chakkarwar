@@ -19,15 +19,18 @@
 ```yaml
 name: Tejas Chakkarwar
 location: San Jose, CA
-education: MS Computer Science @ SJSU (GPA: 3.90, May 2027)
-current_role: Graduate Student & Aspiring SWE Intern
-previous:
-  - Software Engineer @ Accelya Solutions (Java/Spring Boot Microservices)
-  - Big Data Analytics Intern @ Hitachi Vantara (PySpark/Kafka ETL Pipelines)
+education: MS Computer Science @ SJSU (GPA: 3.95, May 2027)
+current:
+  - Final-year MS student, building SafeOps (MS project)
+  - Grader for CS 153, Concepts of Compiler Design @ SJSU
+experience:
+  - SDE Intern @ AWS, S3 team (Summer 2026)
+  - Software Engineer @ Accelya Solutions (Java/Spring Boot microservices)
+  - Big Data Analytics Intern @ Hitachi Vantara (PySpark/Kafka ETL pipelines)
 interests:
   - Distributed Systems & Cloud-Native Architecture
-  - AI/ML Agent Frameworks (LangGraph, CrewAI)
-  - Backend Engineering at Scale
+  - Site Reliability & Safe Automation
+  - AI Agents & Agent Evaluation
 fun_facts:
   - District-level Table Tennis player 🏓
   - ACM Secretary
